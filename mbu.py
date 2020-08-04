@@ -1,13 +1,12 @@
-#!/usr/bin/env python
+# sqlmap/tamper/mbu.py
 
 import hashlib
 import base64
 import urllib
 
+from lib.core.enums import PRIORITY
 
-enums = imp.load_source("lib.core.enums", "/usr/share/sqlmap/lib/core/enums.py")
-
-__priority__ = enums.PRIORITY.NORMAL
+__priority__ = PRIORITY.NORMAL
 
 def tamper(payload, **kwargs):
     hashed = hashlib.md5(payload.encode())
